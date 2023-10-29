@@ -1,13 +1,13 @@
 ui <- fluidPage(
   # Application title
-  titlePanel("DT Editor Minimal Example"),
+  titlePanel("Extended DT"),
   shinyjs::useShinyjs(),
   
   tags$head(
     tags$link(rel = "stylesheet", type = "text/css", href = "style.css")
   ),
   
-  helpText("Note: Remember to save any updates!"),
+  helpText("Note: Please remember to save before closing the session."),
   br(),
   DTUI("mainTable"),
   shiny::br()

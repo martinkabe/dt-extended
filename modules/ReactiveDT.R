@@ -44,7 +44,6 @@ DTServer <- function(id, dt) {
       
       observeEvent(input$deleteRow, {
         t = dt()
-        print(nrow(t))
         if (!is.null(input$mainTable_rows_selected)) {
           t <- t[-as.numeric(input$mainTable_rows_selected),]
         }
