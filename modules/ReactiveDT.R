@@ -74,14 +74,16 @@ DTServer <- function(id, dt) {
           selection = 'single',
           options = list(
             dom = 't',
+            lengthChange = TRUE,
+            pageLength = nrow(dt()),
             scrollX = TRUE,
-            scrollY = "500px",
+            scrollY = "60vh",
             scrollCollapse = TRUE,
             columnDefs = list(
               list(className = "dt-head-center dt-center", targets = "_all")
             )
           ),
-          rownames= FALSE,
+          rownames= TRUE,
           editable = TRUE
         )%>%
           formatStyle(1:ncol(dt()), `font-family` = "Interstate Black") %>% 
