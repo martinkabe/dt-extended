@@ -18,14 +18,16 @@ DTUI <- function(id) {
       label = "Save",
       icon = icon(name = "floppy-disk", class = "fa-regular fa-floppy-disk")
     ),
-    DTOutput(ns("mainTable")),
+    shinycssloaders::withSpinner(DTOutput(ns("mainTable"))),
     actionButton(
       inputId = ns("insertRow"),
-      label = "Insert Row"
+      label = "Insert Row",
+      icon = icon(name = "plus", class = "fa-solid fa-plus")
     ),
     actionButton(
       inputId = ns("deleteRow"),
-      label = "Delete Row"
+      label = "Delete Row",
+      icon = icon(name = "minus", class = "fa-solid fa-minus")
     ),
     textOutput(outputId = ns("tableInfo"))
   )
