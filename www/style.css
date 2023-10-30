@@ -2,3 +2,23 @@
   margin-left: 5%;
   margin-right: 5%;
 }
+
+.data-download-btn {
+  background-color: #53a3ab;
+  color: #e6ebef;
+}
+
+.insert-row-btn {
+  background-color: #36ed20;
+  color: #e6ebef;
+}
+
+.delete-row-btn {
+  background-color: #ef2b2b;
+  color: #e6ebef;
+}
+
+.save-table-btn {
+  background-color: #3230dd;
+  color: #e6ebef;
+}

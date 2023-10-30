@@ -6,27 +6,30 @@ DTUI <- function(id) {
     downloadButton(
       outputId = ns("downloadDataCSV"),
       label = "Download in CSV",
-      class="butt"
+      class="data-download-btn"
     ),
     downloadButton(
       outputId = ns("downloadDataXLSX"),
       label = "Download in XLSX",
-      class="butt"
+      class="data-download-btn"
     ),
     actionButton(
       inputId = ns("updateTable"),
       label = "Save",
+      class = "save-table-btn",
       icon = icon(name = "floppy-disk", class = "fa-regular fa-floppy-disk")
     ),
     shinycssloaders::withSpinner(DTOutput(ns("mainTable"))),
     actionButton(
       inputId = ns("insertRow"),
       label = "Insert Row",
+      class = "insert-row-btn",
       icon = icon(name = "plus", class = "fa-solid fa-plus")
     ),
     actionButton(
       inputId = ns("deleteRow"),
       label = "Delete Row",
+      class = "delete-row-btn",
       icon = icon(name = "minus", class = "fa-solid fa-minus")
     ),
     textOutput(outputId = ns("tableInfo"))
@@ -71,8 +74,11 @@ DTServer <- function(id, dt) {
           selection = 'single',
           options = list(
             dom = 't',
+            scrollX = TRUE,
+            scrollY = "500px",
+            scrollCollapse = TRUE,
             columnDefs = list(
-              list(className = "dt-center", targets = 1:(ncol(dt())-1))
+              list(className = "dt-head-center dt-center", targets = "_all")
             )
           ),
           rownames= FALSE,
